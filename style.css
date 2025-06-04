@@ -383,6 +383,9 @@ nav.show div.icon-close {
   border-bottom: 0.25rem solid var(--base-color);
   border-radius: 0.25rem 0.25rem 0 0;
   text-align: center;
+
+  /* keep text colors consistent regardless of theme */
+  color: hsl(0 0% 46%);
 }
 
 .card i {
@@ -395,6 +398,7 @@ nav.show div.icon-close {
 .card .title {
   font-size: 1.5rem;
   margin-bottom: 0.75rem;
+  color: hsl(var(--hue) 41% 10%);
 }
 
 /*====  TESTIMONIALS ============================ */
