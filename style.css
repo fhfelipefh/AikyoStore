@@ -11,6 +11,12 @@ ul {
 
 a {
   text-decoration: none;
+  color: var(--base-color);
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--base-color-alt);
 }
 
 img {
@@ -199,6 +205,7 @@ nav ul li {
 nav ul li a {
   transition: color 0.2s;
   position: relative;
+  color: var(--title-color);
 }
 
 nav ul li a:hover,
