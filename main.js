@@ -113,3 +113,17 @@ const yearSpan = document.getElementById('current-year')
 if (yearSpan) {
   yearSpan.textContent = new Date().getFullYear()
 }
+
+/* Theme toggle */
+const themeButton = document.getElementById('theme-toggle')
+if (themeButton) {
+  themeButton.addEventListener('click', () => {
+    document.body.classList.toggle('dark')
+    const icon = themeButton.querySelector('span')
+    if (document.body.classList.contains('dark')) {
+      icon.textContent = 'light_mode'
+    } else {
+      icon.textContent = 'dark_mode'
+    }
+  })
+}

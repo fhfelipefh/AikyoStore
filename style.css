@@ -54,6 +54,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+body.dark {
+  --title-color: hsl(var(--hue) 41% 90%);
+  --text-color: hsl(0 0% 80%);
+  --body-color: #121212;
+}
+
 .title {
   font: 700 var(--title-font-size) var(--title-font);
   color: var(--title-color);
@@ -329,7 +335,7 @@ nav.show div.icon-close {
 
 /*====  ABOUT ============================ */
 #about {
-  background: white;
+  background: var(--body-color);
 }
 
 #about .container {
@@ -371,6 +377,7 @@ nav.show div.icon-close {
 }
 
 .card {
+  background: white;
   padding: 3.625rem 2rem;
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
   border-bottom: 0.25rem solid var(--base-color);
@@ -392,7 +399,7 @@ nav.show div.icon-close {
 
 /*====  TESTIMONIALS ============================ */
 #testimonials {
-  background: white;
+  background: var(--body-color);
 }
 
 #testimonials .container {
@@ -550,6 +557,25 @@ footer .social a:hover {
   visibility: visible;
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  background: var(--base-color);
+  color: var(--text-color-light);
+
+  position: fixed;
+  right: 1rem;
+  bottom: 4rem;
+
+  padding: 0.5rem;
+  clip-path: circle();
+
+  font-size: 1.5rem;
+  line-height: 0;
+
+  border: none;
+  cursor: pointer;
 }
 
 /*========= MEDIA QUERIES =========*/
