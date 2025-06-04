@@ -1,3 +1,20 @@
+/* Inicializa partículas de fundo */
+document.addEventListener('DOMContentLoaded', () => {
+  const baseColor = getComputedStyle(document.documentElement)
+    .getPropertyValue('--base-color')
+    .trim()
+  tsParticles.load('tsparticles', {
+    fullScreen: { enable: false },
+    particles: {
+      number: { value: 60 },
+      color: { value: baseColor },
+      opacity: { value: 0.4 },
+      size: { value: 3 },
+      move: { enable: true, speed: 0.6 }
+    }
+  })
+})
+
 /*  abre e fecha o menu quando clicar no icone: hamburguer e x */
 const nav = document.querySelector('#header nav')
 const toggle = document.querySelectorAll('nav .toggle')
@@ -56,14 +73,21 @@ const scrollReveal = ScrollReveal({
 })
 
 scrollReveal.reveal(
-  `#home .image, #home .text,
-  #about .image, #about .text,
+  `#about .image, #about .text,
   #services header, #services .card,
   #testimonials header, #testimonials .testimonials
   #contact .text, #contact .links
   `,
   { interval: 100 }
 )
+
+let homeRevealInitialized = false
+function initHomeReveal() {
+  if (!homeRevealInitialized && window.scrollY > 10) {
+    homeRevealInitialized = true
+    scrollReveal.reveal(`#home .image-right, #home .text`, { interval: 100 })
+  }
+}
 
 /* Botão voltar para o topo */
 const backToTopButton = document.querySelector('.back-to-top')
@@ -106,6 +130,7 @@ window.addEventListener('scroll', function () {
   changeHeaderWhenScroll()
   backToTop()
   activateMenuAtCurrentSection()
+  initHomeReveal()
 })
 
 /* Atualiza o ano do footer dinamicamente */
