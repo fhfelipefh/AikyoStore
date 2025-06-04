@@ -60,8 +60,7 @@ scrollReveal.reveal(
   #about .image, #about .text,
   #services header, #services .card,
   #testimonials header, #testimonials .testimonials
-  #contact .text, #contact .links,
-  footer .brand, footer .social
+  #contact .text, #contact .links
   `,
   { interval: 100 }
 )
@@ -108,3 +107,9 @@ window.addEventListener('scroll', function () {
   backToTop()
   activateMenuAtCurrentSection()
 })
+
+/* Atualiza o ano do footer dinamicamente */
+const yearSpan = document.getElementById('current-year')
+if (yearSpan) {
+  yearSpan.textContent = new Date().getFullYear()
+}

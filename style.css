@@ -72,6 +72,12 @@ body {
   transition: background 0.3s;
 }
 
+.order-button {
+  height: 4rem;
+  padding: 0 3rem;
+  font-size: 1.25rem;
+}
+
 .button:hover {
   background: var(--base-color-alt);
 }
