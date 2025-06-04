@@ -32,6 +32,7 @@ img {
   --text-color: hsl(0 0% 46%);
   --text-color-light: hsl(0 0% 98%);
   --body-color: hsl(0 0% 98%);
+  --header-border-color: #e4e4e4;
 
   /* fonts */
   --title-font-size: 1.875rem;
@@ -40,6 +41,13 @@ img {
   --title-font: 'Poppins', sans-serif;
   --title-fontkinkee: 'KINKEE', kinkee;
   --body-font: 'DM Sans', sans-serif;
+}
+
+body.dark-theme {
+  --title-color: hsl(var(--hue) 41% 90%);
+  --text-color: hsl(0 0% 88%);
+  --body-color: hsl(0 0% 12%);
+  --header-border-color: #444444;
 }
 
 /*===  BASE ============================ */
@@ -132,7 +140,7 @@ body {
 }
 
 #header {
-  border-bottom: 1px solid #e4e4e4;
+  border-bottom: 1px solid var(--header-border-color);
   margin-bottom: 2rem;
   display: flex;
 
@@ -262,6 +270,19 @@ nav.show ul.grid {
   cursor: pointer;
 }
 
+.theme-toggle {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--title-color);
+  margin-left: 1rem;
+}
+
+.theme-toggle:hover {
+  color: var(--base-color);
+}
+
 nav .icon-close {
   visibility: hidden;
   opacity: 0;
@@ -329,7 +350,7 @@ nav.show div.icon-close {
 
 /*====  ABOUT ============================ */
 #about {
-  background: white;
+  background: var(--body-color);
 }
 
 #about .container {
@@ -392,7 +413,7 @@ nav.show div.icon-close {
 
 /*====  TESTIMONIALS ============================ */
 #testimonials {
-  background: white;
+  background: var(--body-color);
 }
 
 #testimonials .container {

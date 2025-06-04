@@ -113,3 +113,20 @@ const yearSpan = document.getElementById('current-year')
 if (yearSpan) {
   yearSpan.textContent = new Date().getFullYear()
 }
+
+/* Theme toggle */
+const themeButton = document.getElementById('theme-toggle')
+if (themeButton) {
+  const savedTheme = localStorage.getItem('aikyo-theme')
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark-theme')
+    themeButton.textContent = '☀️'
+  }
+
+  themeButton.addEventListener('click', () => {
+    document.body.classList.toggle('dark-theme')
+    const isDark = document.body.classList.contains('dark-theme')
+    themeButton.textContent = isDark ? '☀️' : '🌙'
+    localStorage.setItem('aikyo-theme', isDark ? 'dark' : 'light')
+  })
+}
