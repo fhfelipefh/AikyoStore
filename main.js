@@ -1,129 +1,111 @@
-/*  abre e fecha o menu quando clicar no icone: hamburguer e x */
 const nav = document.querySelector('#header nav')
-const toggle = document.querySelectorAll('nav .toggle')
-
-for (const element of toggle) {
-  element.addEventListener('click', function () {
-    nav.classList.toggle('show')
-  })
-}
-
-/* quando clicar em um item do menu, esconder o menu */
-const links = document.querySelectorAll('nav ul li a')
-
-for (const link of links) {
-  link.addEventListener('click', function () {
-    nav.classList.remove('show')
-  })
-}
-
-/* mudar o header da página quando der scroll */
 const header = document.querySelector('#header')
-const navHeight = header.offsetHeight
+const toggles = document.querySelectorAll('nav .toggle')
+const links = document.querySelectorAll('nav ul li a')
+const sections = document.querySelectorAll('main section[id]')
+const backToTopButton = document.querySelector('.back-to-top')
+const themeButton = document.getElementById('theme-toggle')
+const yearSpan = document.getElementById('current-year')
+const themeStorageKey = 'aikyo-theme'
+
+function setMenuState(isOpen) {
+  nav.classList.toggle('show', isOpen)
+  document.body.classList.toggle('nav-open', isOpen)
+
+  toggles.forEach(toggle => {
+    toggle.setAttribute('aria-expanded', String(isOpen))
+  })
+}
+
+toggles.forEach(toggle => {
+  toggle.addEventListener('click', () => {
+    setMenuState(!nav.classList.contains('show'))
+  })
+})
+
+links.forEach(link => {
+  link.addEventListener('click', () => {
+    setMenuState(false)
+  })
+})
+
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') {
+    setMenuState(false)
+  }
+})
 
 function changeHeaderWhenScroll() {
-  if (window.scrollY >= navHeight) {
-    // scroll é maior que a altura do header
-    header.classList.add('scroll')
-  } else {
-    // menor que a altura do header
-    header.classList.remove('scroll')
-  }
+  header.classList.toggle('scroll', window.scrollY >= header.offsetHeight)
 }
-
-/* Testimonials carousel slider swiper */
-const swiper = new Swiper('.swiper-container', {
-  slidesPerView: 1,
-  pagination: {
-    el: '.swiper-pagination'
-  },
-  mousewheel: true,
-  keyboard: true,
-  breakpoints: {
-    767: {
-      slidesPerView: 2,
-      setWrapperSize: true
-    }
-  }
-})
-
-/* ScrollReveal: Mostrar elementos quando der scroll na página */
-const scrollReveal = ScrollReveal({
-  origin: 'top',
-  distance: '30px',
-  duration: 700,
-  reset: true
-})
-
-scrollReveal.reveal(
-  `#home .image, #home .text,
-  #about .image, #about .text,
-  #services header, #services .card,
-  #testimonials header, #testimonials .testimonials
-  #contact .text, #contact .links
-  `,
-  { interval: 100 }
-)
-
-/* Botão voltar para o topo */
-const backToTopButton = document.querySelector('.back-to-top')
 
 function backToTop() {
-  if (window.scrollY >= 560) {
-    backToTopButton.classList.add('show')
-  } else {
-    backToTopButton.classList.remove('show')
-  }
+  backToTopButton.classList.toggle('show', window.scrollY >= 560)
 }
 
-/* Menu ativo conforme a seção visível na página */
-const sections = document.querySelectorAll('main section[id]')
 function activateMenuAtCurrentSection() {
   const checkpoint = window.pageYOffset + (window.innerHeight / 8) * 4
 
-  for (const section of sections) {
+  sections.forEach(section => {
     const sectionTop = section.offsetTop
     const sectionHeight = section.offsetHeight
     const sectionId = section.getAttribute('id')
+    const link = document.querySelector(`nav ul li a[href="#${sectionId}"]`)
+
+    if (!link) return
 
     const checkpointStart = checkpoint >= sectionTop
     const checkpointEnd = checkpoint <= sectionTop + sectionHeight
+    link.classList.toggle('active', checkpointStart && checkpointEnd)
+  })
+}
 
-    if (checkpointStart && checkpointEnd) {
-      document
-        .querySelector('nav ul li a[href*=' + sectionId + ']')
-        .classList.add('active')
-    } else {
-      document
-        .querySelector('nav ul li a[href*=' + sectionId + ']')
-        .classList.remove('active')
-    }
+function applyTheme(theme) {
+  const isDark = theme === 'dark'
+  document.body.classList.toggle('dark', isDark)
+
+  if (!themeButton) return
+
+  const icon = themeButton.querySelector('span')
+
+  if (icon) {
+    icon.textContent = isDark ? 'light_mode' : 'dark_mode'
   }
 }
 
-/* When Scroll */
-window.addEventListener('scroll', function () {
-  changeHeaderWhenScroll()
-  backToTop()
-  activateMenuAtCurrentSection()
-})
+if (themeButton) {
+  const savedTheme = localStorage.getItem(themeStorageKey)
+  const initialTheme = savedTheme || 'light'
 
-/* Atualiza o ano do footer dinamicamente */
-const yearSpan = document.getElementById('current-year')
+  applyTheme(initialTheme)
+
+  themeButton.addEventListener('click', () => {
+    const nextTheme = document.body.classList.contains('dark') ? 'light' : 'dark'
+    applyTheme(nextTheme)
+    localStorage.setItem(themeStorageKey, nextTheme)
+  })
+}
+
 if (yearSpan) {
   yearSpan.textContent = new Date().getFullYear()
 }
 
-/* Theme toggle */
-const themeButton = document.getElementById('theme-toggle')
-if (themeButton) {
-  themeButton.addEventListener('click', () => {
-    document.body.classList.toggle('dark')
-    const icon = themeButton.querySelector('span')
-    if (document.body.classList.contains('dark')) {
-      icon.textContent = 'light_mode'
-    } else {
-      icon.textContent = 'dark_mode'
-    }
-  })
-}
+window.addEventListener(
+  'scroll',
+  () => {
+    changeHeaderWhenScroll()
+    backToTop()
+    activateMenuAtCurrentSection()
+  },
+  { passive: true }
+)
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth >= 1120) {
+    setMenuState(false)
+  }
+})
+
+changeHeaderWhenScroll()
+backToTop()
+activateMenuAtCurrentSection()
