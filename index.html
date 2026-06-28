@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta
     name="description"
-    content="AikyoStore vende fanmades, polaroids personalizadas e kits de k-pop com pedidos pelo Instagram."
+    content="AikyoStore vende produtos Sanrio com pedidos pelo WhatsApp."
   />
   <title>AikyoStore</title>
   <link rel="stylesheet" href="assets/fonts/style.css" />
@@ -27,8 +27,26 @@
       <div class="menu" id="nav-menu">
         <ul class="grid">
           <li><a class="title" href="#home">Início</a></li>
-          <li><a class="title" href="#about">Personalizados</a></li>
-          <li><a class="title" href="#services">Kits</a></li>
+          <li class="nav-dropdown">
+            <details>
+              <summary class="title">
+                Sanrio
+                <span class="material-icons" aria-hidden="true">expand_more</span>
+              </summary>
+              <ul class="submenu" aria-label="Categorias Sanrio">
+                <li><a href="#hello-kitty">Hello Kitty</a></li>
+                <li><a href="#my-melody">My Melody</a></li>
+                <li><a href="#kuromi">Kuromi</a></li>
+                <li><a href="#twinlittlestars">TwinLittleStars</a></li>
+                <li><a href="#pompompurin">Pompompurin</a></li>
+                <li><a href="#keroppi">Keroppi</a></li>
+                <li><a href="#pochacco">Pochacco</a></li>
+                <li><a href="#badtz-maru">Badtz-Maru</a></li>
+                <li><a href="#outros-personagens">Outros personagens</a></li>
+              </ul>
+            </details>
+          </li>
+          <li><a class="title" href="#sanrio">Catálogo</a></li>
           <li><a class="title" href="#contact">Contato</a></li>
         </ul>
       </div>
@@ -63,10 +81,10 @@
     <section class="section" id="home">
       <div class="container home-grid">
         <div class="text">
-          <h1 class="title">A loja que contém todos os fanmades que você deseja</h1>
-          <p>Photocards produzidos com muita qualidade e amor para você.</p>
-          <a class="button order-button" target="_blank" rel="noreferrer" href="https://instagram.com/aikyostore/">
-            Faça seu pedido
+          <h1 class="title">Produtos Sanrio selecionados para você</h1>
+          <p>Escolha sua personagem favorita, veja frente e verso do card e finalize o pedido pelo WhatsApp.</p>
+          <a class="button order-button" href="#sanrio">
+            Ver categorias
           </a>
         </div>
 
@@ -78,148 +96,16 @@
 
     <div class="divider-1"></div>
 
-    <section class="section" id="about">
-      <div class="container about-grid">
-        <div class="image">
-          <img
-            src="img/products/polaroids.jpeg"
-            alt="Polaroids personalizadas"
-            width="1600"
-            height="1600"
-            loading="lazy"
-            decoding="async"
-          />
-        </div>
-
-        <div class="text">
-          <h2 class="title">Polaroids Personalizadas</h2>
-          <ul class="details-list">
-            <li>Branca</li>
-            <li>Colorida</li>
-            <li>Holográfica</li>
-          </ul>
-          <p class="price-line">&gt; [R$ 2,00 UN]</p>
-          <p>
-            *envie suas fotos pelo instagram para
-            <a target="_blank" rel="noreferrer" href="https://instagram.com/aikyostore/">@aikyostore</a>
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <div class="divider-2"></div>
-
-    <section class="section" id="services">
+    <section class="section" id="sanrio">
       <div class="container">
         <header class="section-header">
-          <h2 class="title">Kits</h2>
-          <p class="subtitle">
-            Receba os kits de seus artistas favoritos, <strong>AikyoStore</strong> trouxe kits com as melhores
-            lembranças para para você.
-          </p>
+          <p class="eyebrow">Catálogo</p>
+          <h2 class="title">Sanrio</h2>
         </header>
 
-        <div class="catalog-grid">
-          <article class="card">
-            <img
-              src="img/products/kittwice.jpeg"
-              alt="Kit Twice formula of love 1"
-              width="1600"
-              height="1600"
-              loading="lazy"
-              decoding="async"
-            />
-            <div class="card-content">
-              <h3 class="title">Kit Twice - formula of love 1</h3>
-              <ul class="card-details">
-                <li>fanmade ( não contém verso )</li>
-                <li>1ª versão kit Twice - formula of love + brinde</li>
-                <li>borda quadrada ou redonda</li>
-              </ul>
-              <p class="price-line">&gt; [R$ 18,00]</p>
-            </div>
-          </article>
+        <div class="character-sections" id="catalog-root" aria-live="polite"></div>
 
-          <article class="card">
-            <img
-              src="img/products/kittwice2.jpeg"
-              alt="Kit Twice formula of love 2"
-              width="1600"
-              height="1600"
-              loading="lazy"
-              decoding="async"
-            />
-            <div class="card-content">
-              <h3 class="title">Kit Twice - formula of love 2</h3>
-              <ul class="card-details">
-                <li>fanmade ( não contém verso )</li>
-                <li>2ª versão kit Twice - formula of love + brinde</li>
-                <li>borda quadrada ou redonda</li>
-              </ul>
-              <p class="price-line">&gt; [R$ 18,00]</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <img
-              src="img/products/kitbts.jpg"
-              alt="Kit BTS Love yourself 1"
-              width="1600"
-              height="1600"
-              loading="lazy"
-              decoding="async"
-            />
-            <div class="card-content">
-              <h3 class="title">Kit BTS - Love yourself 1</h3>
-              <ul class="card-details">
-                <li>Fanmade ( não contém verso )</li>
-                <li>1ª versão kit BTS - love yourself + brinde</li>
-                <li>Borda quadrada ou redonda</li>
-              </ul>
-              <p class="price-line">&gt; [R$ 14,00 UN]</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <img
-              src="img/products/kitbts2.jpg"
-              alt="Kit BTS Love yourself 2"
-              width="1600"
-              height="1600"
-              loading="lazy"
-              decoding="async"
-            />
-            <div class="card-content">
-              <h3 class="title">Kit BTS - Love yourself 2</h3>
-              <ul class="card-details">
-                <li>Fanmade ( não contém verso )</li>
-                <li>2ª versão kit BTS - love yourself + brinde</li>
-                <li>Borda quadrada ou redonda</li>
-              </ul>
-              <p class="price-line">&gt; [R$ 14,00 UN]</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <img
-              src="img/products/kitstray.webp"
-              alt="Kit Stray Kids Maniac"
-              width="1080"
-              height="1080"
-              loading="lazy"
-              decoding="async"
-            />
-            <div class="card-content">
-              <h3 class="title">Kit Stray Kids - Maniac</h3>
-              <ul class="card-details">
-                <li>Fanmade ( não contém verso )</li>
-                <li>Brinde</li>
-                <li>Borda quadrada ou redonda</li>
-              </ul>
-              <p class="price-line">&gt; [R$ 16,00 UN]</p>
-            </div>
-          </article>
-        </div>
+        <p class="whatsapp-note" id="whatsapp-note" aria-live="polite"></p>
       </div>
     </section>
 
@@ -231,12 +117,11 @@
         <div class="text">
           <h2 class="title">Entre em contato com a gente!</h2>
           <p>
-            Entre em contato com a
-            <a target="_blank" rel="noreferrer" href="https://instagram.com/aikyostore/">AikyoStore</a>, queremos
-            tirar suas dúvidas, ouvir suas críticas e sugestões.
+            Entre em contato com a AikyoStore pelo WhatsApp. Queremos tirar suas dúvidas, ouvir suas críticas e
+            sugestões.
           </p>
-          <a href="https://instagram.com/aikyostore/" class="button" target="_blank" rel="noreferrer">
-            <i class="icon-instagram" aria-hidden="true"></i>
+          <a href="https://wa.me/555491106565" class="button" target="_blank" rel="noreferrer">
+            <span class="material-icons" aria-hidden="true">chat</span>
             Entrar em contato
           </a>
         </div>
@@ -261,8 +146,8 @@
       </div>
 
       <div class="social grid">
-        <a href="https://instagram.com/aikyostore/" target="_blank" rel="noreferrer" aria-label="Instagram">
-          <i class="icon-instagram" aria-hidden="true"></i>
+        <a href="https://wa.me/555491106565" target="_blank" rel="noreferrer" aria-label="WhatsApp">
+          <span class="material-icons" aria-hidden="true">chat</span>
         </a>
       </div>
     </div>
@@ -272,6 +157,6 @@
     <i class="icon-arrow-up" aria-hidden="true"></i>
   </a>
 
-  <script src="main.js"></script>
+  <script src="main.js?v=20260628-1"></script>
 </body>
 </html>

@@ -1,0 +1,129 @@
+{
+  "categories": [
+    {
+      "id": "hello-kitty",
+      "name": "Hello Kitty",
+      "icon": "img/category-icons/hello-kitty.png",
+      "products": [
+        {
+          "title": "HELLO KITTY [ 2,00 ]",
+          "category": "Hello Kitty",
+          "frontImage": "img/products/sanrio/HELLO KITTY/HELLO.KITTY-1.jpeg",
+          "frontAlt": "Card Hello Kitty 1",
+          "description": [
+            "2 notinhas oficiais da Sanrio",
+            "Importado do Japão",
+            "Tamanho P"
+          ]
+        },
+        {
+          "title": "HELLO KITTY [ 1,50 ]",
+          "category": "Hello Kitty",
+          "frontImage": "img/products/sanrio/HELLO KITTY/HELLO.KITTY-2.jpeg",
+          "frontAlt": "Card Hello Kitty 2",
+          "description": [
+            "notinha oficial da Sanrio",
+            "importado do Japão",
+            "Tamanho P"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "my-melody",
+      "name": "My Melody",
+      "icon": "img/category-icons/my-melody.png",
+      "products": []
+    },
+    {
+      "id": "kuromi",
+      "name": "Kuromi",
+      "icon": "img/category-icons/kuromi.png",
+      "products": []
+    },
+    {
+      "id": "twinlittlestars",
+      "name": "TwinLittleStars",
+      "icon": "img/category-icons/twinlittlestars.png",
+      "products": []
+    },
+    {
+      "id": "pompompurin",
+      "name": "Pompompurin",
+      "icon": "img/category-icons/pompompurin.png",
+      "products": []
+    },
+    {
+      "id": "keroppi",
+      "name": "Keroppi",
+      "icon": "img/category-icons/keroppi.png",
+      "products": [
+        {
+          "title": "KEROPPI [ 3,00 ]",
+          "category": "Keroppi",
+          "frontImage": "img/products/sanrio/KEROPPI/KEROPI-1-FRENTE.jpeg",
+          "backImage": "img/products/sanrio/KEROPPI/KEROPI-1-VERSO.jpeg",
+          "frontAlt": "Frente do card Keroppi número 1",
+          "backAlt": "Verso do card Keroppi número 1",
+          "description": [
+            "notinha oficial da Sanrio",
+            "importado do Japão",
+            "Tamanho M"
+          ]
+        },
+        {
+          "title": "KEROPPI [ 1,50 ]",
+          "category": "Keroppi",
+          "frontImage": "img/products/sanrio/KEROPPI/KEROPI-2.jpeg",
+          "frontAlt": "Frente do card Keroppi número 2",
+          "description": [
+            "notinha oficial da Sanrio",
+            "importado do Japão",
+            "Tamanho P"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pochacco",
+      "name": "Pochacco",
+      "icon": "img/category-icons/pochacco.png",
+      "products": []
+    },
+    {
+      "id": "badtz-maru",
+      "name": "Badtz-Maru",
+      "icon": "img/category-icons/badtz-maru.png",
+      "products": [
+        {
+          "title": "BADTZ-MARU [ 2,00 ]",
+          "category": "Badtz-Maru",
+          "frontImage": "img/products/sanrio/BADTZ-MARU/BADTZ-1.jpeg",
+          "frontAlt": "Card Badtz-Maru 1",
+          "description": [
+            "mini notinha oficial da Sanrio",
+            "importado do Japão",
+            "tamanho P"
+          ]
+        },
+        {
+          "title": "BADTZ-MARU [ 3,00 ]",
+          "category": "Badtz-Maru",
+          "frontImage": "img/products/sanrio/BADTZ-MARU/BADTZ-2.jpeg",
+          "frontAlt": "Card Badtz-Maru 2",
+          "description": [
+            "2 papéis de carta oficiais da Sanrio",
+            "importados do Japão",
+            "tamanho M"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "outros-personagens",
+      "name": "Outros personagens",
+      "icon": "img/category-icons/outros-personagens.png",
+      "products": []
+    }
+  ]
+}
