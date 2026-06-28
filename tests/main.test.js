@@ -91,12 +91,14 @@ test('setProductSide does not swap to back when card has no back image', () => {
 test('only explicit FRENTE and VERSO product has side toggle', () => {
   const html = renderCatalog(catalog)
   const productCards = html.match(/class="card product-card"/g) || []
-  const sideToggles = html.match(/class="side-toggle"/g) || []
+  const sideToggles = html.match(/side-toggle/g) || []
+  const placeholders = html.match(/side-toggle-placeholder/g) || []
   const badtzOne = html.match(/data-product="BADTZ-MARU \[ 2,00 \]"/g) || []
   const badtzTwo = html.match(/data-product="BADTZ-MARU \[ 3,00 \]"/g) || []
 
   assert.equal(productCards.length, 6)
-  assert.equal(sideToggles.length, 1)
+  assert.equal(sideToggles.length, 11)
+  assert.equal(placeholders.length, 5)
   assert.equal(html.includes('KEROPI-1-FRENTE.jpeg'), true)
   assert.equal(html.includes('KEROPI-1-VERSO.jpeg'), true)
   assert.equal(badtzOne.length, 1)
@@ -110,6 +112,7 @@ test('catalog copy does not include removed labels or heavy subtitle', () => {
   assert.equal(html.includes('Card 01'), false)
   assert.equal(html.includes('Navegue por personagem'), false)
   assert.equal(html.includes('Cards disponíveis da Hello Kitty'), false)
+  assert.equal(html.includes('Abrindo WhatsApp com a mensagem do produto selecionado.'), false)
   assert.equal(html.includes('HELLO KITTY [ 2,00 ]'), true)
   assert.equal(html.includes('HELLO KITTY [ 1,50 ]'), true)
   assert.equal(html.includes('KEROPPI [ 3,00 ]'), true)

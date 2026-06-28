@@ -55,7 +55,7 @@ function renderProduct(product, category) {
         <button class="side-button" type="button" data-side="back" aria-pressed="false">Verso</button>
       </div>
     `
-    : ''
+    : '<div class="side-toggle side-toggle-placeholder" aria-hidden="true"></div>'
 
   return `
     <article
@@ -142,17 +142,10 @@ async function loadCatalog(documentRef, windowRef) {
 
 function initProductInteractions(documentRef = document) {
   const buyButtons = documentRef.querySelectorAll('.buy-button')
-  const whatsappNote = documentRef.getElementById('whatsapp-note')
 
   buyButtons.forEach(button => {
     const url = buildWhatsAppUrl(button.dataset.product, button.dataset.category)
     button.href = url
-
-    button.addEventListener('click', () => {
-      if (!whatsappNote) return
-
-      whatsappNote.textContent = 'Abrindo WhatsApp com a mensagem do produto selecionado.'
-    })
   })
 
   documentRef.querySelectorAll('.product-card').forEach(card => {

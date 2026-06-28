@@ -517,10 +517,15 @@ body.nav-open {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.35rem;
+  min-height: 2.85rem;
   padding: 0.25rem;
   border: 1px solid var(--border-color);
   border-radius: 0.75rem;
   background: var(--body-color);
+}
+
+.side-toggle-placeholder {
+  visibility: hidden;
 }
 
 .side-button {
@@ -560,14 +565,6 @@ body.nav-open {
 .buy-button {
   width: 100%;
   min-height: 3rem;
-}
-
-.whatsapp-note {
-  min-height: 1.5rem;
-  margin-top: 1rem;
-  text-align: center;
-  color: var(--title-color);
-  font-weight: 500;
 }
 
 #contact .button i,
